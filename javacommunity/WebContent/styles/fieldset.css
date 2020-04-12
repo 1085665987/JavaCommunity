@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+.field{
+	position:absolute; 
+	font:500 14px/24px 微软雅黑;
+	left:50%;
+	margin-left:-325px; 
+	width: 650px; 
+	border: 1px solid black; 
+	border-radius:8px;
+	box-shadow:2px 2px 8px"
+}

@@ -1,0 +1,146 @@
+@CHARSET "UTF-8";
+*{
+    margin: 0;
+    padding:0;
+    font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+.header{
+	    margin: 0 0  15px 0;
+}
+.portrait {
+    padding:3px ;
+    max-width: 48px;
+    margin: 0 0 0 2px;
+}
+.container .row .col-8 .node-content>li::after{
+     content: '';
+     display: block;
+     clear: both;
+ }
+.article{
+    border: 1px solid black;
+    display: inline-block;
+
+}
+
+
+.content{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:300px;
+}
+.content::before{
+    content: '';
+    display: block;
+    clear: both;
+    margin: 5px auto 5px 0;
+}
+.content::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.type{
+    display: inline-block;
+    background-color: #e7eaed;
+    padding:3px 5px;
+    margin: 5px auto 5px 0;
+    font-size: 12px;
+}
+.img-circle{
+    text-align: center;
+    margin-left:5px;
+    width: 8px;
+    height: 8px;
+}
+.articler{
+    display: inline-block;
+    background-color: white;
+    font-weight: 700;
+    color: #778087;
+    padding:3px 5px;
+    margin: 5px auto 5px 0;
+    font-size: 12px;
+}
+hr{
+    margin: 10px 0 0 0 ;
+    padding:0;
+}
+
+.nav-tabs {
+     border-bottom: 0px solid #ddd;
+}
+
+.home-panel {
+    padding:0 ;
+}
+.panel-default>.panel-heading {
+    position: relative;
+    border-color: transparent;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+#home{
+	background-color:white;
+}
+.nav-tabs>li>a{
+	border: 0px solid #ddd; 
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+	border: 0px solid #ddd; 
+}
+a:active, a:focus, a:hover, a:visited {
+    outline: 0;
+    cursor: pointer;
+}
+
+a, a:active, a:focus, a:hover, a:visited {
+    text-decoration: none;
+    color: #778087;
+}
+
+.list-group-item {
+	border: 0px solid #ddd;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    background-color: transparent;
+    border-top-width: 0px;
+    border-bottom: 1px solid #ddd;
+}
+ .panel  P{
+    font-family: "华文宋体","楷体"; 
+    font-size: 18px;
+    margin: 0;
+ }
+.panel-body {
+    background-color: #f9fbfd;
+}
+.panel-body P {
+    margin: 0;
+    padding: 0;
+}
+.panel-footer {
+    padding: 10px 15px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: #f9fbfd;
+	border-top:0px solid #ddd;
+}
+.panel-default  .panel-footer p{
+	text-align: right;;
+	margin-right: 10px;
+}

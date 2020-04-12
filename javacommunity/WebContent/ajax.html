@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ckeditor</title>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+ <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+</head>
+<body>
+	 <form action="CKEditorTest.do" method="post">
+        <textarea name="content" id="editor">
+            &lt;p&gt;This is some sample content.&lt;/p&gt;
+        </textarea>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) , {
+                cloudServices: {
+                    tokenUrl: 'https://70253.cke-cs.com/token/dev/UdMcqyW0poevfziLspkejZpOIfGJFebdzXeHIwP8psblPHKoDfmEdy0JjeLn',
+                    uploadUrl: 'https://70253.cke-cs.com/easyimage/upload/'
+                }
+            }).catch( error => {
+                console.error( error );
+            });
+    </script>
+</body>
+</html>
+

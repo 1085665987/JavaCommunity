@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+.panel-default .post-title{
+	background-color: white;
+}
+.post-content{
+	font-size: 1.1em;
+}
+.post-footer{
+	height:40px;
+	line-height: 18px;
+}
+.heart{
+	width:15px;
+	height: 15px;
+	background-size: cover;
+	display:inline-block;
+	background-image: url(/javacommunity/appimg/heart_gray.png);
+}
+.heart:HOVER {
+	background-image: url(/javacommunity/appimg/heart_red.png);
+}
+
+.love-count{
+	font-size:12px;
+	margin-left: 10px;
+}

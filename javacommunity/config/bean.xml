@@ -1,0 +1,72 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+ 	xmlns:tx="http://www.springframework.org/schema/tx"
+ 	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+ 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+ 		
+		<bean id="user" class="com.firday.bean.UserInfo"></bean>
+	
+		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+			<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+			<property name="user" value="root"></property>
+			<property name="password" value="root"></property>
+			<property name="jdbcUrl" value="jdbc:mysql:///chinajava"></property>
+		</bean>
+		<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+			<property name="dataSource" ref="dataSource"></property>
+		</bean>
+		
+		<bean id="userService" class="com.first.service.UserService">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		<bean id="userAction" class="com.first.action.UserAction">
+			<property name="userService" ref="userService"></property>
+		</bean>
+		
+		<bean id="postService" class="com.first.service.PostService">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		<bean id="postAction" class="com.first.action.PostAction">
+			<property name="postService" ref="postService"></property>
+			<property name="userService" ref="userService"></property>
+		</bean>
+		
+		<bean id="commentService" class="com.first.service.CommentService">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+
+		<bean id="nodeService" class="com.first.service.NodeService">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		<bean id="nodeAction" class="com.first.action.NodeAction">
+			<property name="nodeService" ref="nodeService"></property>
+			<property name="userService" ref="userService"></property>
+		</bean>
+		
+		<bean id="nodeCollectionServer" class="com.first.service.NodeCollectionServer">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		
+		<bean id="nodeCollectionAction" class="com.first.action.NodeCollectionAction">
+			<property name="nodeCollectionServer" ref="nodeCollectionServer"></property>
+		</bean>
+		
+		<bean id="postCollectionServer" class="com.first.service.PostCollectionServer">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		<bean id="postCollectionAction" class="com.first.action.PostCollectionAction">
+			<property name="postCollectionServer" ref="postCollectionServer"></property>
+		</bean>
+		
+		<bean id="userInterestServer" class="com.first.service.UserInterestServer">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		<bean id="userInterestAction" class="com.first.action.UserInterestAction">
+			<property name="userInterestServer" ref="userInterestServer"></property>
+		</bean>
+	</beans>

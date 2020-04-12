@@ -1,0 +1,94 @@
+@CHARSET "UTF-8";
+*{
+    margin: 0;
+    padding:0;
+    font-family: arial;
+}
+table{
+    width: 90%;
+    margin: 0 auto;
+    border-collapse:separate; border-spacing:0px 10px;
+}
+tr{
+    width: 100%;
+    text-align:center;    margin: 0 auto;
+    border : black solid 1px;
+}
+
+td{
+    text-align:center;
+}
+tr> .span{
+    width: 15%;
+    background-color: #e7e7e7;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+tr .span > span {
+    background-color: #e7e7e7;
+    font-size: 13px;
+}
+tr .reg-input{
+    padding:0;
+    width: 85%;
+    font-size: 13px;
+}
+
+tr .reg-input > input{
+    width: 100%;
+    float: left;
+    text-indent: 1em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: #e7e7e7 solid 1px;
+}
+.container-reg {
+    width:75%;
+}
+.input-tab{
+    width:70%;
+    display: inline-block;
+}
+
+
+.form-title {
+    text-align: center;
+    line-height: 40px;
+    margin: 10px 0;
+    color: black;
+}
+.page-content{
+    width:90%;
+    margin: 30px auto;
+}
+.input-tab button{
+    display: block;
+    font-size: 16px;
+    color: white;
+    width: 100%;
+    margin: 0 auto 30px auto;
+    border-width: 0;
+    padding: 14px;
+    background-color: #2ecc71;
+}
+.reg-panel{
+    color: #333;
+	background-color: white ;
+    border-width: 0;
+}
+
+.btn-lg {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+  input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type="number"]{
+        -moz-appearance: textfield;
+    }
+
