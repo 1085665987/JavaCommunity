@@ -9,7 +9,7 @@
     	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
  		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-		<bean id="user" class="com.firday.bean.UserInfo"></bean>
+		<bean id="user" class="com.friday.bean.UserInfo"></bean>
 
 		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 			<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
@@ -21,52 +21,52 @@
 			<property name="dataSource" ref="dataSource"></property>
 		</bean>
 
-		<bean id="userService" class="com.firday.service.UserService">
+		<bean id="userService" class="com.friday.service.UserService">
 			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 		</bean>
-		<bean id="userAction" class="com.firday.action.UserAction">
+		<bean id="userAction" class="com.friday.action.UserAction">
 			<property name="userService" ref="userService"></property>
 		</bean>
 
-		<bean id="postService" class="com.firday.service.PostService">
+		<bean id="postService" class="com.friday.service.PostService">
 			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 		</bean>
-		<bean id="postAction" class="com.firday.action.PostAction">
+		<bean id="postAction" class="com.friday.action.PostAction">
 			<property name="postService" ref="postService"></property>
 			<property name="userService" ref="userService"></property>
 		</bean>
 
-		<bean id="commentService" class="com.firday.service.CommentService">
+		<bean id="commentService" class="com.friday.service.CommentService">
 			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 		</bean>
 
-		<bean id="nodeService" class="com.firday.service.NodeService">
+		<bean id="nodeService" class="com.friday.service.NodeService">
 			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 		</bean>
-		<bean id="nodeAction" class="com.firday.action.NodeAction">
+		<bean id="nodeAction" class="com.friday.action.NodeAction">
 			<property name="nodeService" ref="nodeService"></property>
 			<property name="userService" ref="userService"></property>
 		</bean>
 
-		<bean id="nodeCollectionServer" class="com.firday.service.NodeCollectionServer">
+		<bean id="nodeCollectionServer" class="com.friday.service.NodeCollectionServer">
 			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 		</bean>
 
-		<bean id="nodeCollectionAction" class="com.firday.action.NodeCollectionAction">
+		<bean id="nodeCollectionAction" class="com.friday.action.NodeCollectionAction">
 			<property name="nodeCollectionServer" ref="nodeCollectionServer"></property>
 		</bean>
 
-		<bean id="postCollectionServer" class="com.firday.service.PostCollectionServer">
+		<bean id="postCollectionServer" class="com.friday.service.PostCollectionServer">
 			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 		</bean>
-		<bean id="postCollectionAction" class="com.firday.action.PostCollectionAction">
+		<bean id="postCollectionAction" class="com.friday.action.PostCollectionAction">
 			<property name="postCollectionServer" ref="postCollectionServer"></property>
 		</bean>
 
-		<bean id="userInterestServer" class="com.firday.service.UserInterestServer">
+		<bean id="userInterestServer" class="com.friday.service.UserInterestServer">
 			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 		</bean>
-		<bean id="userInterestAction" class="com.firday.action.UserInterestAction">
+		<bean id="userInterestAction" class="com.friday.action.UserInterestAction">
 			<property name="userInterestServer" ref="userInterestServer"></property>
 		</bean>
 	</beans>
