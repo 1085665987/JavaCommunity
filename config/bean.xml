@@ -1,0 +1,72 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+ 	xmlns:tx="http://www.springframework.org/schema/tx"
+ 	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+ 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+		<bean id="user" class="com.firday.bean.UserInfo"></bean>
+
+		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+			<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+			<property name="user" value="root"></property>
+			<property name="password" value="root"></property>
+			<property name="jdbcUrl" value="jdbc:mysql:///chinajava"></property>
+		</bean>
+		<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+			<property name="dataSource" ref="dataSource"></property>
+		</bean>
+
+		<bean id="userService" class="com.firday.service.UserService">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		<bean id="userAction" class="com.firday.action.UserAction">
+			<property name="userService" ref="userService"></property>
+		</bean>
+
+		<bean id="postService" class="com.firday.service.PostService">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		<bean id="postAction" class="com.firday.action.PostAction">
+			<property name="postService" ref="postService"></property>
+			<property name="userService" ref="userService"></property>
+		</bean>
+
+		<bean id="commentService" class="com.firday.service.CommentService">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+
+		<bean id="nodeService" class="com.firday.service.NodeService">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		<bean id="nodeAction" class="com.firday.action.NodeAction">
+			<property name="nodeService" ref="nodeService"></property>
+			<property name="userService" ref="userService"></property>
+		</bean>
+
+		<bean id="nodeCollectionServer" class="com.firday.service.NodeCollectionServer">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+
+		<bean id="nodeCollectionAction" class="com.firday.action.NodeCollectionAction">
+			<property name="nodeCollectionServer" ref="nodeCollectionServer"></property>
+		</bean>
+
+		<bean id="postCollectionServer" class="com.firday.service.PostCollectionServer">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		<bean id="postCollectionAction" class="com.firday.action.PostCollectionAction">
+			<property name="postCollectionServer" ref="postCollectionServer"></property>
+		</bean>
+
+		<bean id="userInterestServer" class="com.firday.service.UserInterestServer">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		<bean id="userInterestAction" class="com.firday.action.UserInterestAction">
+			<property name="userInterestServer" ref="userInterestServer"></property>
+		</bean>
+	</beans>
