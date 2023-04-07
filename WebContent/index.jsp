@@ -1,6 +1,6 @@
-<%@page import="com.firday.bean.UserInfo"%>
-<%@page import="com.firday.util.CookieUtils"%>
-<%@page import="com.firday.util.DisplayDateUtil"%>
+<%@page import="com.friday.bean.UserInfo"%>
+<%@page import="com.friday.util.CookieUtils"%>
+<%@page import="com.friday.util.DisplayDateUtil"%>
 
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>

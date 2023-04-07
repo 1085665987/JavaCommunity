@@ -1,5 +1,5 @@
-<%@page import="com.firday.bean.UserInfo"%>
-<%@page import="com.firday.util.CookieUtils"%>
+<%@page import="com.friday.bean.UserInfo"%>
+<%@page import="com.friday.util.CookieUtils"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
